@@ -44,6 +44,7 @@ module.exports = {
     'no-unused-expressions': 'off',
     'react/no-unescaped-entities': 'off',
     'jsx-a11y/anchor-is-valid': 'off',
-    'react/prop-types': 'off'
+    'react/prop-types': 'off',
+    'global-require': 'off'
   }
 }

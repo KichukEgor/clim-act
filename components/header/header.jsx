@@ -15,9 +15,7 @@ const SHeader = styled.header`
 const Navigation = styled.nav`
   display: flex;
   justify-content: space-between;
-  a {
-    
-  }
+
 `
 
 const Header = () => (

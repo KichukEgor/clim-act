@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from "next/image";
 import styled from 'styled-components'
 
 const CardContainer = styled.div`
@@ -6,10 +7,7 @@ const CardContainer = styled.div`
   height: 466px;
   background: #FCFCFC;
 `
-const Image = styled.img`
-  width: 327px;
-  height: 210px;
-`
+
 const Title = styled.h1`
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
@@ -30,7 +28,7 @@ const LinkButton = styled(Link)`
 
 const Card = ({ img, title, text, linkButton }) => (
   <CardContainer>
-    <Image src={img} alt="image"/>
+    <Image width={328} height={210} src={img} alt="image"/>
     <Title>{title}</Title>
     <Text>{text}</Text>
     <LinkButton>{linkButton}</LinkButton>
