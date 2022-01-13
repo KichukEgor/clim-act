@@ -42,6 +42,7 @@ module.exports = {
     'no-console': 'off',
     'no-nested-ternary': 'off',
     'no-unused-expressions': 'off',
-    'react/no-unescaped-entities': 'off'
+    'react/no-unescaped-entities': 'off',
+    'jsx-a11y/anchor-is-valid': 'off'
   }
 }

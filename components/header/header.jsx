@@ -8,24 +8,35 @@ const SHeader = styled.header`
   padding: 13px 32px;
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
-  background: #F7F7FC;
+  align-items: center;
+  background: ${(props) => props.color};
 `
 
-const Logo = styled.div`
-  height: 96px;
-  padding: 13px 32px;
-  background: #F7F7FC;
+const Navigation = styled.nav`
+  display: flex;
+  justify-content: space-between;
+  a {
+    
+  }
 `
 
 const Header = () => (
-  <SHeader>
+  <SHeader color="#F7F7FC">
     <Image width={173} height={50} src="/images/clim-art-logo.svg" alt="climArt logo"/>
-    <nav>
-      <Link href="/about">
-        <a>About Page</a>
+    <Navigation>
+      <Link href="/">
+        <a>Home</a>
       </Link>
-    </nav>
+      <Link href="/Projects">
+        <a>Projects</a>
+      </Link>
+      <Link href="/Blog">
+        <a>Blog</a>
+      </Link>
+      <Link href="/Contact-us">
+        <a>Contact us</a>
+      </Link>
+    </Navigation>
   </SHeader>
 )
 
