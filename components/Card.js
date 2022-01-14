@@ -14,6 +14,9 @@ const CardContainer = styled.div`
 const ImageWrapper = styled.div`
   padding: 0;
   margin: 0;
+  & > span {
+    border-radius: 20px 20px 0 0;
+  }
 `
 
 const ContentWrapper = styled.div`
@@ -57,7 +60,13 @@ const Button = styled.button`
 export const Card = ({ img, title, text, link }) => (
   <CardContainer>
     <ImageWrapper>
-      <Image width={328} height={210} src={img} alt="image"/>
+      <Image
+        width={328}
+        height={210}
+        src={img}
+        alt="image"
+        className="rounded-full"
+      />
     </ImageWrapper>
     <ContentWrapper>
       <Title>{title}</Title>

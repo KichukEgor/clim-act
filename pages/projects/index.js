@@ -46,9 +46,6 @@ const Content = styled.section`
   grid-template-columns: 706px 431px;
 `
 
-const Description = styled.div`
-`
-
 const H3 = styled.h3`
   height: 70px;
   display: flex;
@@ -68,8 +65,11 @@ const P = styled.p`
   font-weight: 400;
   line-height: 32px;
   letter-spacing: 0.75px;
+  & + p {
+    margin-top: 26px;
+  }
 `
-/* TODO выравнять */
+
 const GoalsList = styled.div`
   display: grid;
   gap: 16px;
@@ -203,7 +203,8 @@ export default function Projects() {
                 vitae laoreet elit risus. Augue maecenas turpis quam velit cursus orci integer urna.
                 Pellentesque ipsum commodo placerat neque. Enim molestie praesent odio viverra.
                 At morbi commodo, cursus at neque a nibh condimentum aliquam.
-
+              </P>
+              <P>
                 Blandit pulvinar volutpat faucibus pretium viverra imperdiet nec. Vestibulum
                 arcu dolor sit in nascetur euismod egestas sagittis varius. Nisi interdum
                 vestibulum nullam nunc. Nec risus proin etiam sit vel elit ut tempor, rhoncus.
