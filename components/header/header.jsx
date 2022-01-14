@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 const SHeader = styled.header`
   height: 96px;
@@ -10,6 +11,7 @@ const SHeader = styled.header`
   justify-content: space-between;
   align-items: center;
   background: ${(props) => props.color};
+
   & > div {
     display: flex;
     justify-content: space-between;
@@ -28,7 +30,15 @@ const Navigation = styled.nav`
   line-height: 22px;
   letter-spacing: 0.25px;
 
-  a:hover {
+  a {
+    text-transform: capitalize;
+
+    & :hover {
+      color: #7C80E9;
+    }
+  }
+  
+  .active {
     color: #7C80E9;
   }
 `
@@ -55,34 +65,50 @@ const Contact = styled.button`
   }
 `
 
-const Header = () => (
-  <SHeader color="#F7F7FC">
-    <Image width={173} height={50} src="/images/clim-art-logo.svg" alt="climArt logo"/>
-    <div>
-      <Navigation>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-        <Link href="/projects">
-          <a>Projects</a>
-        </Link>
-        <Link href="/blog">
-          <a>Blog</a>
-        </Link>
-      </Navigation>
-      <Contact>
-        <Image
-          src="/icons/svg/Mail.svg"
-          alt="mail"
-          width={16}
-          height={16}
-        />
-        <div>
-          Contact us
-        </div>
-      </Contact>
-    </div>
-  </SHeader>
-)
+const Header = ({ color }) => {
+  const router = useRouter()
+  const { route } = router
+  console.log(router.pathname, 'dsdsdsdsdsdsds')
+  const activeRoute = ({ route, link }) => {
+    if (route === '/') return 'active'
+    if (route === `/${link}`) return 'active'
+    return ''
+  }
+
+  return (
+    <SHeader color={color}>
+      <Image width={173} height={50} src="/images/clim-art-logo.svg" alt="climArt logo"/>
+      <div>
+        <Navigation>
+          <Link href="/">
+            <a className={router.pathname === '/' ? 'active' : ''}>
+              Home
+            </a>
+          </Link>
+          {
+            ['projects', 'blog'].map((link) => (
+              <Link href={`${link}`}>
+                <a className={router.pathname === `/${link}` ? 'active' : ''}>
+                  {link}
+                </a>
+              </Link>
+            ))
+          }
+        </Navigation>
+        <Contact>
+          <Image
+            src="/icons/svg/Mail.svg"
+            alt="mail"
+            width={16}
+            height={16}
+          />
+          <div>
+            Contact us
+          </div>
+        </Contact>
+      </div>
+    </SHeader>
+  )
+}
 
 export default Header

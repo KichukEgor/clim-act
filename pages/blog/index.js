@@ -19,8 +19,9 @@ const Body = styled.section`
 
 const ContainerImage = styled.div`
   position: absolute;
-  top: 63.5%;
-  left: 17.5%
+  top: 588px;
+  left: 115px;
+  right: 115px;
 `
 
 const Label = styled.h1`
